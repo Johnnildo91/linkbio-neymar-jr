@@ -29,6 +29,14 @@ body {
     padding: 2rem;
 }
 
+.hero-section video{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -42,9 +50,20 @@ body {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid rgba(255,255,255,0.3);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     margin-bottom: 1rem;
+}
+
+.profile-image::before{
+    content: "";
+    width: 214px;
+    height: 214px;
+    position: absolute;
+    left: -7px;
+    top: -7px;
+    background: linear-gradient(90deg, #ffdf00, #009c3b);
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .profile-image img {
@@ -57,8 +76,30 @@ body {
     color: white;
     font-size: 2.5rem;
     font-weight: bold;
-    text-shadow: 2px 2px 0px rgb(0,0,0);
+    text-shadow: 2px 2px 1px rgb(0,0,0);
     margin: 0;
+}
+
+.profile-name::before {
+    content: "";
+    width: 45px;
+    height: 4px;
+    position: absolute;
+    bottom: 2px;
+    left: 11px;
+    background: linear-gradient(90deg, #ffdf00, #009c3b);
+    border-radius: 10px;
+}
+
+.profile-name::after {
+    content: "";
+    background: url("/assets/img/logo/verificado.png");
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    bottom: 9px;
+    right: -4px;
 }
 
 /* Links Sociais */
@@ -121,13 +162,13 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     position: relative;
-    font-family: 'montserrat', sans-serif;
-    
+    font-family: 'montserrat', sans-serif;    
 }
 
 .stats-container {
     position: relative;
     z-index: 1;
+    padding-top: 200px;
 }
 
 .stats-title {
@@ -135,7 +176,7 @@ body {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2.5rem;
-    text-shadow: 2px 2px 0px rgb(0,0,0);
+    text-shadow: 2px 2px 1px rgb(0,0,0);
 }
 
 .stats-table-container {
